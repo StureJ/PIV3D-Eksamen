@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
         playerHP.KillCounter += 1f;
+        playerHP.playerShield += 10f;
     }
 
     void enemyAttack()
