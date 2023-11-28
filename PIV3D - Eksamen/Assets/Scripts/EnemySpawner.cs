@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("InstantiateEnemy", 0f, Random.Range(3f, 10f));
+        InvokeRepeating("InstantiateEnemy", 0f, Random.Range(1f, 5f));
     }
     
     void InstantiateEnemy()

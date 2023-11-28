@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private playerMovement playerHP;
     public bool canAttack = true;
     public float attackSpeed = 3f;
+    
+    private SkinnedMeshRenderer skinnedMeshRenderer;
 
     public void TakeDamage(float amount)
     {
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour
         player = playerObject.transform;
 
         playerHP = playerObject.GetComponent<playerMovement>();
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     public void Update()
@@ -49,6 +52,11 @@ public class Enemy : MonoBehaviour
                 attackSpeed = 3f;
                 canAttack = true;
             }
+        }
+
+        if (health <= 10)
+        {
+            skinnedMeshRenderer.material.color = Color.red;
         }
         
     }
