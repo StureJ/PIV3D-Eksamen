@@ -28,14 +28,16 @@ public class Enemy : MonoBehaviour
         GameObject playerObject = GameObject.Find("Player");
         player = playerObject.transform;
 
-        // Assuming playerMovement script is attached to the player GameObject
         playerHP = playerObject.GetComponent<playerMovement>();
     }
 
     public void Update()
     {
         Vector3 direction = player.position - transform.position;
+        direction.y = 0f;
         direction.Normalize();
+        
+        transform.LookAt(player);
 
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 

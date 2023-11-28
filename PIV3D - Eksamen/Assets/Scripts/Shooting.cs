@@ -20,6 +20,7 @@ public class Shooting : MonoBehaviour
     private float fireRate = 1f;
 
     private float timeSinceLastShot = 0f;
+    public ParticleSystem muzzleFlash;
 
     // Update is called once per frame
     void Update()
@@ -30,6 +31,7 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
             currentWeaponAmmo -= 1f;
+            muzzleFlash.Play();
         }
 
         if (Input.GetButton("Fire1") && (currentWeaponAmmo > 0) && isHeavyWeapon)
@@ -39,6 +41,7 @@ public class Shooting : MonoBehaviour
                 Shoot();
                 currentWeaponAmmo -= 1f;
                 timeSinceLastShot = 0f;
+                muzzleFlash.Play();
             }
         }
 
