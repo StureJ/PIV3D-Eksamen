@@ -13,6 +13,7 @@ https://github.com/StureJ/PIV3D-Eksamen/assets/112693909/ebd97456-d579-48f7-9343
 
 
 The main part of the game consists of:
+
 •	Player – The character that the user plays as. Moved with WASD keys.
 
 •	Camera – Locked in a first-person perspective. Moved with the mouse.
